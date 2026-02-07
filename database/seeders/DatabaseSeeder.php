@@ -15,11 +15,24 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        User::factory(2)->create();
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+          User::factory()->create([
+            'name' => 'JAO admin',
+            'email' => 'joao@gmail.com',
+            'password' => Hash::make('senha'), // same bcrypt('password'),
+
+            'phone' => '11999999999',
+            'tel' => '1133333333',
+            'cpf' => '12345678901',
+            'rg' => '123456789',
+            'sex' => 'M',
+            'birthdate' => '1990-01-01',
+
+            'country' => 'Brasil',
+            'state' => 'São Paulo',
+            'city' => 'São Paulo',
+            'affiliated' => true,
         ]);
     }
 }
